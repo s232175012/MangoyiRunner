@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mangoyi's Durban Runner | Fast. Reliable. Trusted.</title>
+<link rel="stylesheet" href="syl/style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="top-bar">FAST. RELIABLE. TRUSTED. — I RUN, SO YOU DON'T HAVE TO! You shop, I drop!</div>
+
+<header>
+  <div class="logo"><span>🏃‍♀️</span> MANGOYI'S <em>Durban</em> RUNNER</div>
+  <nav>
+    <a href="#fees">Fees</a>
+    <a href="#order">Book</a>
+    <button class="btn-admin" onclick="openAdmin()">ADMIN LOGIN</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>MANGOYI'S <span class="yellow">Durban</span> <span class="blue">RUNNER</span></h1>
+    <p class="hero-sub">You shop, <b>I drop!</b> Your convenience is my priority.</p>
+    <div class="hero-cards">
+      <div><b>072 451 7824</b><br><small>Calls & WhatsApp</small></div>
+      <div><b>135 Foreman Rd</b><br><small>Clare Estate, Durban 4091</small></div>
+    </div>
+    <a href="#order" class="btn-main">REQUEST A RUNNER NOW</a>
+    <p class="methods">I USE: PAXI • COURIER • BUS • TAXI — HOODIES, BEANIES & MORE</p>
+  </div>
+  <div class="hero-img">
+    <img src="images/Mangoyi.jpeg" alt="Runner" />
+  </div>
+</section>
+
+<section id="fees" class="section blue-bg">
+  <h2>RUNNER FEE</h2>
+  <div class="fees-wrap">
+    <div class="fee-table"><table id="feeDisplay"></table><p class="small">* Goods price + Runner Fee = Total to pay</p></div>
+    <div class="calculator">
+      <h3>Calculate Your Total</h3>
+      <input type="number" id="goodsPrice" placeholder="Goods price R e.g. 750" />
+      <button onclick="calcFee()" class="btn-main full">CALCULATE FEE</button>
+      <div id="result">Enter price to see fee</div>
+      <div class="pay-box"><h4>PAYMENTS</h4><p>CAPITEC<br><b>Miss S Mphali</b><br><span class="acc">1897071890</span></p><small>Send POP to WhatsApp</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="order" class="section">
+  <h2>Book a Runner</h2>
+  <form id="runnerForm">
+    <div class="row"><input type="text" id="name" placeholder="Your Name" required /><input type="text" id="phone" placeholder="WhatsApp Number" required /></div>
+    <input type="text" id="shopName" placeholder="Where to shop? (Small Street, China Mall)" required />
+    <div class="row"><input type="number" id="itemPrice" placeholder="Price of Items (R)" required /><select id="delivery"><option>PAXI</option><option>COURIER</option><option>BUS</option><option>TAXI</option></select></div>
+    <textarea id="details" placeholder="Size, colour, delivery address..."></textarea>
+    <button type="submit" class="btn-main full">SEND TO WHATSAPP & SAVE ORDER</button>
+  </form>
+</section>
+
+<div id="adminModal" class="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeAdmin()">&times;</span>
+    <h2>ADMIN LOGIN</h2>
+    <input type="password" id="adminPass" placeholder="Enter Password" />
+    <button onclick="loginAdmin()" class="btn-main full">LOGIN</button>
+    <p id="loginError" class="error"></p>
+    <small>Default: admin123</small>
+  </div>
+</div>
+
+<div id="adminPanel" class="admin-panel">
+  <div class="admin-header">
+    <h2>ADMIN — Mangoyi's Runner <small>by TeoCode</small></h2>
+    <div class="admin-head-right"><img src="images/logo.jpeg" class="mini-logo" /><button onclick="logoutAdmin()" class="btn-logout">LOGOUT</button></div>
+  </div>
+  <div class="admin-stats">
+    <div class="stat"><h3 id="totalOrders">0</h3><p>Total Orders</p></div>
+    <div class="stat"><h3 id="totalRevenue">R0</h3><p>Expected Fees</p></div>
+    <div class="stat"><h3 id="pendingOrders">0</h3><p>Pending</p></div>
+  </div>
+  <div class="admin-grid">
+    <div class="admin-card"><h3>Manage Fees</h3><div id="adminFeeEditor"></div><button onclick="saveFees()" class="btn-main full">SAVE FEES</button></div>
+    <div class="admin-card wide"><h3>All Orders</h3><table id="ordersTable"><thead><tr><th>Date</th><th>Name</th><th>Shop</th><th>Total</th><th>Status</th><th>X</th></tr></thead><tbody id="ordersBody"></tbody></table></div>
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="footer-content">
+    <div class="footer-left"><p><b>Mangoyi's Durban Runner</b><br>072 451 7824 | mphalisiwaphiwe3@gmail.com<br>135 Foreman Rd, Clare Estate, Durban 4091</p><p>Capitec — Miss S Mphali — <b>1897071890</b></p></div>
+    <div class="footer-right">
+      <div class="teocode-brand"><img src="images/logo.jpeg" alt="TeoCode Logo" class="teocode-logo" /><div><span>Website Designed & Built By</span><a href="https://s232175012.github.io/Portfolio/" target="_blank"><b>TeoCode</b></a><small>We Build Complicated Websites</small></div></div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Mangoyi's Durban Runner — Fast. Reliable. Trusted. | Powered by TeoCode</div>
+</footer>
+
+<script src="scripts/javascr.js"></script>
+</body>
+</html>
